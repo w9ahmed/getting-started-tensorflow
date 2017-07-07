@@ -37,3 +37,20 @@ adder_node = tf.add(placeholder_a, placeholder_b)
 print session.run(adder_node, {placeholder_a: 4.0, placeholder_b: 6.0})
 print session.run(adder_node, {placeholder_a: [1, 3], placeholder_b: [4, 3]})
 
+
+################################
+# Adding 1 to value
+################################
+print '\n While Loop Stuff \n'
+
+i = tf.constant(0, dtype=tf.int32)
+
+r = tf.while_loop(
+	lambda i: tf.less(i, 10),
+	lambda i: tf.add(i, 1),
+	[i])
+
+print session.run(r)
+
+
+

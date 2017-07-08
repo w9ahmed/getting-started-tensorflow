@@ -23,7 +23,9 @@ with tf.Session() as sess:
 	print '\nIterating 10 times...\n'
 	for i in range(10):
 		result = sess.run(assign)
-		print 'New result of NUM: ', result
+		print 'NUM value updated to: ', result
+
+	print '\nFinal Value for NUM: ', sess.run(num)
 
 
-
+print 'Session Closed.'
